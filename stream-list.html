@@ -1,0 +1,35 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="streams-service/streams-service.html">
+<link rel="import" href="stream-list-item.html">
+
+<polymer-element name="stream-list">
+  <template>
+    <style>
+    :host {
+      display: block;
+      width: 100%;
+    }
+    </style>
+
+    <streams-service id="service" stream="{{later}}"></streams-service>
+    
+    <div layout vertical left>
+      <template bind="{{later}}">
+        <stream-list-item>
+          <p>hello fra stream list</p>
+	      	<h3>{{title}}</h3>
+	      	<p>{{time}}</p>
+	      	<a>{{url}}</a>
+        </stream-list-item>
+      </template>
+    </div>
+  </template>
+
+  <script>
+  Polymer({
+    ready: function(){
+      console.log('stream list rdy');
+    }
+  });
+  </script>
+</polymer-element>
