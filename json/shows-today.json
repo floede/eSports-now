@@ -1,0 +1,18 @@
+  {    
+    "games": [{
+      "hearthstone" : [
+        {
+          "time" : "default",
+          "title" : "Small tourney",
+          "url" : "http://www.smalltourney.com",
+          "stream" : "http://www.twitch.tv/smalltourney"
+        },      
+        {
+          "time" : "1200",
+          "title" : "Big tourney",
+          "url" : "http://www.bigtourney.com",
+          "stream" : "http://www.twitch.tv/bigtourney"
+        }
+      ]
+    }] 
+  }

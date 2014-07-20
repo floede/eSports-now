@@ -1,0 +1,51 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/core-ajax/core-ajax.html">
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<polymer-element name="streams-service" attributes="stream">
+  <template>
+    <style>
+    :host {
+      display: none;
+    }
+    </style>
+    <core-ajax id="ajax"
+      auto
+      url="../json/shows-today.json"
+      on-core-response="{{streamsLoaded}}" 
+      handleAs="json">
+    </core-ajax>
+  </template>
+  <script>
+
+  Polymer('streams-service', {
+    created: function() {
+      this.stream = [];
+      this.laterStreams = [];
+      //console.log('created');
+    },
+    streamsLoaded: function() {
+      var JSON = this.$.ajax.response;
+      var streams = [];
+      var stream = [];
+      //console.log('streams loaded: ' , JSON);
+      // Make a copy of the loaded data
+
+      $.each(JSON.games[0].hearthstone, function( index, value ) {
+        //console.log(index , " " , value);
+        if (value.time == "default") {
+          stream = value;
+        } else if (value.time == "1300") {
+          stream = value;
+        }
+        if(value.time != "default") {
+          streams.push(value);
+        }
+      });
+      this.stream = stream;
+      this.laterStreams = streams;
+      console.log('later: ' , this.laterStreams);
+    }
+  });
+  </script>
+</polymer-element>

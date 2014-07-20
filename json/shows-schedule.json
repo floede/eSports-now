@@ -1,0 +1,35 @@
+{"schedule": [
+  { 
+    "date": "06072014", 
+    "games": [{
+      "hearthstone" : [
+        {
+          "time" : "1200",
+          "title" : "Big tourney",
+          "url" : "http://www.hearttourney.com",
+          "stream" : "http://www.twitch.tv/hearthtourney"
+        },
+        {
+          "time" : "1400",
+          "title" : "Minor tourney",
+          "url" : "http://www.hearttourney.com",
+          "stream" : "http://www.twitch.tv/hearthtourney"
+        }
+      ]
+    }] 
+  },
+  { 
+    "date": "07072014",  
+    "games": [{
+      "hearthstone" : [
+        {
+          "time" : "1200",
+          "title" : "Big tourney",
+          "url" : "http://www.hearttourney.com",
+          "stream" : "http://www.twitch.tv/hearthtourney"
+        }
+      ]
+    }] 
+  }
+  ]
+}

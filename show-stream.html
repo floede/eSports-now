@@ -1,0 +1,42 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="streams-service/streams-service.html">
+<link rel="import" href="stream-temp.html">
+
+<polymer-element name="show-stream" attributes="stream">
+  <template>
+    <style>
+    :host {
+      display: block;
+      width: 100%;
+    }
+    </style>
+
+    <streams-service id="service" stream="{{stream}}"></streams-service>
+    
+    <div layout vertical center>
+      <template bind="{{stream}}">
+        <stream-temp>
+	      	<h2>{{title}}</h2>
+	      	<p>{{channelname}}</p>
+	      	<object type="application/x-shockwave-flash" height="378" width="620" id="live_embed_player_flash" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel={{channelname}}" bgcolor="#000000">
+	      		<param name="allowFullScreen" value="true" />
+	      		<param name="allowScriptAccess" value="always" />
+	      		<param name="allowNetworking" value="all" />
+	      		<param name="movie" value="http://www.twitch.tv/widgets/live_embed_player.swf" />
+	      		<param name="flashvars" value="hostname=www.twitch.tv&channel={{channelname}}&auto_play=true&start_volume=25" />
+	      	</object>
+	      	<a href="{{stream}}">Watch live video from {{title}} on www.twitch.tv</a>
+	      	<a>{{url}}</a>
+        </stream-temp>
+      </template>
+    </div>
+  </template>
+
+  <script>
+  Polymer({
+    ready: function(){
+      console.log('show stream rdy');
+    }
+  });
+  </script>
+</polymer-element>
