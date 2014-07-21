@@ -4,16 +4,64 @@
     <!-- 1. Load platform.js for polyfill support. -->
     <script src="bower_components/platform/platform.js"></script>
 
+    <link rel="import" href="bower_components/core-icon-button/core-icon-button.html">
+    <link rel="import" href="bower_components/core-toolbar/core-toolbar.html">
+    <link rel="import" href="bower_components/core-header-panel/core-header-panel.html">    
+
     <!-- 2. Use an HTML Import to bring in the element. -->
+    <link rel="import" href="fonts/source-sans-pro.html">
     <link rel="import" href="show-stream.html">
     <link rel="import" href="stream-list.html">
   </head>
   <body>
 
-    <h1>Watch games played live</h1>
+    <style>
 
-    <!--show-stream></show-stream-->
+    body {
+      font-family: 'Source Sans Pro', sans-serif;
+    }
 
-    <stream-list></stream-list>
+      #core_header_panel {
+        width: 100%;
+        height: 100%;
+        left: 0px;
+        top: 0px;
+        position: absolute;
+      }
+      #core_toolbar {
+        color: rgb(255, 255, 255);
+        background-color: rgb(79, 125, 201);
+      }
+      #section {
+        height: 1000px;
+        background: linear-gradient(rgb(214, 227, 231), rgb(173, 216, 230));
+      }
+      #paper_input {
+        left: 1250px;
+        top: 760px;
+      }
+      #section-stream {
+        
+      }
+      #h1 {
+        
+      }
+    </style>
+    <core-header-panel mode="standard" id="core_header_panel">
+      <core-toolbar id="core_toolbar">
+        <core-icon-button icon="menu" id="core_icon_button"></core-icon-button>
+        <div id="div">Header</div>
+      </core-toolbar>
+    </core-header-panel>
+    <section id="section" horizontal layout>
+      <section id="section-stream" start two flex>
+        <h1>Watch games played live</h1>
+        <show-stream></show-stream>
+      </section>
+      <section id="section-later" start one flex>
+        <h2 id="h2">Watch later</h2>
+        <stream-list></stream-list>
+      </section>
+    </section>
   </body>
 </html>

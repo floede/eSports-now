@@ -2,7 +2,7 @@
 <link rel="import" href="../bower_components/core-ajax/core-ajax.html">
 <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 
-<polymer-element name="streams-service" attributes="stream">
+<polymer-element name="streams-service" attributes="stream, later">
   <template>
     <style>
     :host {
@@ -41,13 +41,13 @@
           stream = value;
         }
         if(value.time != "default") {
-          streams = value;
+          streams.push(value);
         }
       });
       this.stream = stream;
-      console.log('stream: ' , this.stream);
+      //console.log('stream: ' , this.stream);
       this.later = streams;
-      console.log('later: ' , this.later);
+      //console.log('later: ' , this.later);
     }
   });
   </script>

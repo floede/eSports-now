@@ -12,6 +12,12 @@
           "title" : "Big tourney",
           "url" : "http://www.bigtourney.com",
           "stream" : "http://www.twitch.tv/bigtourney"
+        },      
+        {
+          "time" : "1400",
+          "title" : "Medium tourney",
+          "url" : "http://www.medtourney.com",
+          "stream" : "http://www.twitch.tv/medtourney"
         }
       ]
     }] 
